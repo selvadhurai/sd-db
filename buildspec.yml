@@ -12,4 +12,5 @@ phases:
     commands:
        - pwd 
        - ls -la
+       - systemctl status postgresql
        - . ./sd-script1.sh
