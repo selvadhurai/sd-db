@@ -7,3 +7,5 @@ phases:
   build:
     commands:
       - ./sd_script1.sh
+      - ls -la
+      - ls -la sd-db
