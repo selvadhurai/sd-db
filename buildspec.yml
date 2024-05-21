@@ -7,9 +7,10 @@ phases:
       
   build:
     commands:
+       - chmod +x install_postgresql_client.sh
        - . ./postgresql-client.sh
-       - sudo yum update -y
-       - sudo yum install postgresql -y
+   #    - sudo yum update -y
+   #    - sudo yum install postgresql -y
    #   - chmod +x ./sd-db/sd-script1.sh
    #   - ./sd-db/sd-script1.sh
        - pwd 
