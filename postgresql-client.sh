@@ -1,5 +1,5 @@
 #!/bin/bash
 # Update package lists
-sudo apt-get update
+sudo yum update -y
 # Install PostgreSQL client tools
-sudo apt-get install -y postgresql-client
+sudo yum install postgresql -y
