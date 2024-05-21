@@ -12,5 +12,5 @@ phases:
     commands:
        - pwd 
        - ls -la
-       - sudo systemctl status postgresql
+       - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;" 
        - . ./sd-script1.sh
