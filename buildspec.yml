@@ -4,8 +4,11 @@ phases:
   install:
     runtime-versions:
       python: 3.8
+      
   build:
     commands:
+      - apt-get update
+      - apt-get install -y postgresql-client
    #   - chmod +x ./sd-db/sd-script1.sh
    #   - ./sd-db/sd-script1.sh
        - pwd 
