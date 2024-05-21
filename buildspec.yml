@@ -6,4 +6,4 @@ phases:
       python: 3.8
   build:
     commands:
-      - ./sd-db/sd_script1.sh
+      - ./sd_script1.sh
