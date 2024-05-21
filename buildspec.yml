@@ -6,7 +6,7 @@ phases:
       python: 3.8
   build:
     commands:
-      - chmod +x sd-script1.sh
-      - ./sd-script1.sh
+      - chmod +x ./sd-db/sd-script1.sh
+      - ./sd-db/sd-script1.sh
       - ls -la
     #  - ls -la sd-db
