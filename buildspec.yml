@@ -14,12 +14,6 @@ phases:
       - pwd
       # Verify libpq installation
       - psql --version
-      # - sudo amazon-linux-extras enable epel
-      # - sudo yum install postgresql-devel
-      # - sudo yum install -y libpq
-      # - psql --version
-      # - yum list available | grep postgresql
-      # - yum list installed | grep libpq
       # - rpm -qa | grep libpq
       # - dpkg -l | grep libpq
       - ls -la
