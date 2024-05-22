@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      python: 3.8
     commands:
       # Install build tools and dependencies
       - sudo yum install -y gcc make wget
@@ -20,3 +22,6 @@ phases:
 
       # Verify libpq installation
       - psql --version
+      - ls -la
+       - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;" 
+       - . ./sd-script1.sh
