@@ -13,6 +13,7 @@ phases:
     commands:
        - pwd 
        - psql --version
+       - yum list installed | grep libpq
        - rpm -qa | grep libpq
        - dpkg -l | grep libpq
        - ls -la
