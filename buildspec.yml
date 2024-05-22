@@ -17,5 +17,16 @@ phases:
       # - rpm -qa | grep libpq
       # - dpkg -l | grep libpq
       - ls -la
-      - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;"
+      # - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;"
       # - . ./sd-script1.sh
+      - |
+        # Set Database connection parameters
+        DB_HOST="sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com"
+        DB_PORT="5432"
+        DB_NAME="sd_firstdb"
+        DB_USER="postgres"
+        DB_PASSWORD="$DB_PASSWORD"
+        SQL_FILE="./release1.sql"
+
+        # Connect to the database
+        psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;"
