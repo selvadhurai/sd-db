@@ -12,6 +12,7 @@ phases:
   build:
     commands:
        - pwd 
+       - psql --version
        - rpm -qa | grep libpq
        - dpkg -l | grep libpq
        - ls -la
