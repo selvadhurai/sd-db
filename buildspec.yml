@@ -6,8 +6,8 @@ phases:
       python: 3.8
     commands:
      # - psql --version
-      - sudo yum update -y
-      - sudo yum install -y postgresql
+      - sudo apt update -y
+      - sudo apt install -y postgresql
       
   build:
     commands:
