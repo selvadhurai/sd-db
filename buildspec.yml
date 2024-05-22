@@ -1,4 +1,3 @@
-
 version: 0.2
 
 phases:
@@ -12,9 +11,9 @@ phases:
 
   build:
     commands:
-       - pwd 
+      - pwd
       # Verify libpq installation
-        - psql --version
+      - psql --version
       # - sudo amazon-linux-extras enable epel
       # - sudo yum install postgresql-devel
       # - sudo yum install -y libpq
@@ -23,6 +22,6 @@ phases:
       # - yum list installed | grep libpq
       # - rpm -qa | grep libpq
       # - dpkg -l | grep libpq
-       - ls -la
-       - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;" 
-       - . ./sd-script1.sh
+      - ls -la
+      - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;"
+      - . ./sd-script1.sh
