@@ -2,8 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      amazon-linux: latest
     commands:
       # Install build tools and dependencies
       - sudo yum install -y gcc make wget
