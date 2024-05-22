@@ -5,25 +5,16 @@ phases:
   install:
     runtime-versions:
       python: 3.8
-   # commands:
-   #   - sudo yum update -y
-   #  - sudo yum install -y postgresql
+    commands:
+      - psql --version
+      - sudo apt update -y
+      - sudo apt install -y postgresql
 
   build:
     commands:
-      #- pwd 
-        # Download PostgreSQL source code
-       - wget https://ftp.postgresql.org/pub/source/v13.4/postgresql-13.4.tar.gz
-       - tar -zxvf postgresql-13.4.tar.gz
-       - cd postgresql-13.4
-
-      # Configure, compile, and install libpq
-      - ./configure
-      - make
-      - sudo make install
-
+       - pwd 
       # Verify libpq installation
-      - psql --version
+        - psql --version
       # - sudo amazon-linux-extras enable epel
       # - sudo yum install postgresql-devel
       # - sudo yum install -y libpq
