@@ -5,23 +5,15 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
-      # Install build tools and dependencies
-      - sudo yum install -y gcc make wget
+  
 
   build:
     commands:
-      # Download PostgreSQL source code
-      - wget https://ftp.postgresql.org/pub/source/v13.4/postgresql-13.4.tar.gz
-      - tar -zxvf postgresql-13.4.tar.gz
-      - cd postgresql-13.4
+      # Set up PostgreSQL Yum Repository
+      - sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
-      # Configure, compile, and install libpq
-      - ./configure
-      - make
-      - sudo make install
-
-      # Verify libpq installation
-      - sudo yum install -y postgresql
+      # Install libpq
+      - sudo yum install -y postgresql10
       - psql --version
       - ls -la
       - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;" 
