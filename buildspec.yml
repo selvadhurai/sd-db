@@ -28,6 +28,7 @@ phases:
         # DB_PASSWORD="$DB_PASSWORD"
         DB_PASSWORD="selva1234"
         SQL_FILE="./release1.sql"
+        export PGPASSWORD="$DB_PASSWORD"
 
         # Connect to the database
-        psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;" -w
+        psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;"
