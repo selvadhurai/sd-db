@@ -29,4 +29,4 @@ phases:
         SQL_FILE="./release1.sql"
 
         # Connect to the database
-        psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;"
+        psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;" -w
