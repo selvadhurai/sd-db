@@ -6,6 +6,8 @@ DB_NAME="sd_firstdb"
 DB_USER="postgres"
 DB_PASSWORD=$DB_PASSWORD
 # SQL script file
-SQL_FILE=". ./release1.sql"
+# SQL_FILE=". ./release1.sql"
+export PGPASSWORD="$DB_PASSWORD"
 # Connect to the database
-pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -f "$SQL_FILE"
+pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;"
+# psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;"
