@@ -8,6 +8,13 @@ DB_PASSWORD="$DB_PASSWORD"
 # SQL script file
 # SQL_FILE=". ./release1.sql"
 export PGPASSWORD="$DB_PASSWORD"
+# Check network connectivity
+echo "Testing connectivity to the database host..."
+ping -c 4 "$DB_HOST"
+if [ $? -ne 0 ]; then
+    echo "Failed to reach the database host. Exiting."
+    exit 1
+fi
 # Connect to the database
 pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME"
 psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "SELECT 1;"
