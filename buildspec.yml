@@ -5,19 +5,24 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
-     # - psql --version
+      - echo "Installing PostgreSQL client"
       - sudo apt update -y
       - sudo apt install -y postgresql
       
-  build:
+  pre_build:
     commands:
+      - echo "Preparing environment"
+      - export PGPASSWORD="$DB_PASSWORD"
       - pwd
       # Verify libpq installation
       - psql --version
       # - rpm -qa | grep libpq
       # - dpkg -l | grep libpq
-      - ls -la
+      # - ls -la
       # - psql -h "sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com" -U "postgres" -d "sd_firstdb" -c "SELECT 1;"
+  build:
+    commands:
+      - echo "Running database script"
       - . ./sd-script1.sh
         # Set Database connection parameters
         #  DB_HOST="sd-db1.c76o4qoeq8xw.us-east-1.rds.amazonaws.com"
