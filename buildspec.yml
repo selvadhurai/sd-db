@@ -25,8 +25,8 @@ phases:
         DB_PORT="5432"
         DB_NAME="sd_firstdb"
         DB_USER="postgres"
-        # DB_PASSWORD="$DB_PASSWORD"
-        DB_PASSWORD="selva1234"
+        DB_PASSWORD="$DB_PASSWORD"
+        # DB_PASSWORD="selva1234"
         SQL_FILE="./release1.sql"
         export PGPASSWORD="$DB_PASSWORD"
 
